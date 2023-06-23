@@ -1,0 +1,30 @@
+<h1 class="text-center my-5">Agregar Periodistas</h1>
+<br><br>
+
+
+<div class="d-flex justify-content-center">
+    <div class="card col-6 ">
+        <%= form_with model: @journalist, method: :post do |form| %>
+            <div class="border p-5 shadow ">
+                <div class="mb-3">
+                    <%= form.label :name, "Nombre del periodista", class:"form-label" %>
+                    <%= form.text_field :name, class:"form-control" %>
+                </div>
+                <div class="mb-3">
+                    <%= form.label :lastname, "Apellido", class:"form-label" %>
+                    <%= form.text_field :lastname, class:"form-control" %>
+                </div>
+                <div class="mb-5">
+                    <%= form.label :speciality, "Especialidad", class:"form-label" %>
+                    <%= form.text_area :speciality, class:"form-control" %>
+                </div>
+                <div class="text-center">
+                    <%= form.submit "Agregar", class:"btn btn-dark" %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+<div class="text-center my-5">
+    <%= link_to "Listado", journalists_index_path, class:"btn btn-dark" %>
+</div>
